@@ -58,8 +58,10 @@ public class Controller {
         Translator translator = new Translator(math);
         result = translator.translate(arrayList);
         System.out.println(result);
-        errorGUI.setText(errorMessage); // display error message to user
-        resultMessage.setText("x = " + result); //display result to user 
+
+        errorGUI.setText(errorMessage); // !! display error message to user
+
+        resultMessage.setText("" + result); //display result to user 
     }
 
 
