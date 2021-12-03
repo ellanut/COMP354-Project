@@ -1,6 +1,6 @@
 import java.util.ArrayList;
 import java.util.Arrays;
-import java.util.Scanner;
+// import java.util.Scanner;
 
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
@@ -17,6 +17,7 @@ public class Calculator extends Application
         primaryStage.setTitle("Calculator Notebook");
         primaryStage.setScene(scene);
         primaryStage.show();
+		
     }
 
 	public static void main(String[] args)
@@ -40,19 +41,19 @@ public class Calculator extends Application
 		
 		
 		
-		String choice = "";
-		do {
-			Editor editor = new Editor();
-			ArrayList<String> arrayList = new ArrayList<>();
-			arrayList = editor.Read();
-			MathClass math = new MathClass();
-			Translator translator = new Translator(math);
-			System.out.println(translator.translate(arrayList));
+		// String choice = "";
+		// do {
+		// 	Editor editor = new Editor();
+		// 	ArrayList<String> arrayList = new ArrayList<>();
+		// 	arrayList = editor.Read();
+		// 	MathClass math = new MathClass();
+		// 	Translator translator = new Translator(math);
+		// 	System.out.println(translator.translate(arrayList));
 			
-			System.out.println("Do you want to go again?");
-			Scanner in = new Scanner(System.in);
-			choice = in.next();
-		} while (choice.equals("yes"));
+		// 	System.out.println("Do you want to go again?");
+		// 	Scanner in = new Scanner(System.in);
+		// 	choice = in.next();
+		// } while (choice.equals("yes"));
 	}
 	
 	public static void integration_test_1()

@@ -1,4 +1,5 @@
 import java.io.IOException;
+import java.util.ArrayList;
 
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -8,6 +9,7 @@ import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextArea;
+import javafx.scene.input.MouseEvent;
 import javafx.stage.Stage;
 
 public class Controller {
@@ -18,10 +20,10 @@ public class Controller {
 
     String userInput;
     String errorMessage;
-    String result;
+    Float result;
 
     @FXML
-    private TextArea editor;
+    private TextArea editorGUI;
     @FXML
     private Label errorGUI;
     @FXML
@@ -45,13 +47,19 @@ public class Controller {
     }
 
     // Run the command written in the editor by the user
-    public void run(ActionEvent event) throws IOException{
-        userInput = editor.getText();   // get text and store it in variable userInput
+    public void run(MouseEvent event) throws IOException{
+        userInput = editorGUI.getText();   // get text and store it in variable userInput
         System.out.println("Here's what you typed: " + userInput);
 
-
+        Editor editor = new Editor();
+        ArrayList<String> arrayList = new ArrayList<>();
+        arrayList = editor.Read(userInput);
+        MathClass math = new MathClass();
+        Translator translator = new Translator(math);
+        result = translator.translate(arrayList);
+        System.out.println(result);
         errorGUI.setText(errorMessage); // display error message to user
-        resultMessage.setText(result); //display result to user 
+        resultMessage.setText("x = " + result); //display result to user 
     }
 
 

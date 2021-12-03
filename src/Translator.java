@@ -7,7 +7,7 @@ public class Translator implements translateJob
 	private String arithmetic_op = "";
 	private float inputOne = 0;
 	private float inputTwo = 0;
-	private int numberOfLoops = 0;
+	private int numberOfLoops = 1;
 	private int inputOne_loop = 0;
 	
 	public MathClass getMath() {

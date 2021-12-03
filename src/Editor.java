@@ -1,7 +1,6 @@
 
 import java.util.ArrayList;
 import java.util.Arrays;
-import java.util.Scanner;
 
 
 public class Editor implements editJob{
@@ -41,24 +40,20 @@ public class Editor implements editJob{
 		this.userInput = userInput;
 	}
 
-	public ArrayList<String> Read() {
-		System.out.println("Please input a valid order");
+	public ArrayList<String> Read(String userInput) {
+		// System.out.println("Please input a valid order");
 
 		words2 = new ArrayList<String>();
-		while(true){
-			Scanner s = new Scanner (System.in);
-			String s2 = s.nextLine();
-			setUserInput(s2);
-			String line = getUserInput();
-			String [] words = line.split(" ");
+
+		setUserInput(userInput);
+		String line = getUserInput();
+		String [] words = line.split(" ");
 			
-		        if(words.length == 4 || words.length == 7) {
-		        	words2 = new ArrayList<>(Arrays.asList(words));
-		            break;
-		        }
-		        else
-		            System.out.println("wrong number of inputs, try again");
-		    }		
+		    if(words.length == 4 || words.length == 7) {
+		        words2 = new ArrayList<>(Arrays.asList(words));
+		    }
+		    else
+		        System.out.println("wrong number of inputs, try again");
 		return words2;		
 	}
 
@@ -77,8 +72,9 @@ public class Editor implements editJob{
 		        }
 		        else
 		            System.out.println("wrong, the input is: " + getUserInput());	
+					//errorGUI.setText(errorGUI.getText()+"blabla");
 	}
-	
+
 	//Checks that the number of inputs is correct.
 	public static void test_case_1()
 	{
