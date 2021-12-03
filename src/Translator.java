@@ -7,7 +7,7 @@ public class Translator implements translateJob
 	private String arithmetic_op = "";
 	private float inputOne = 0;
 	private float inputTwo = 0;
-	private int numberOfLoops = 0;
+	private int numberOfLoops = 1;
 	private int inputOne_loop = 0;
 	
 	public MathClass getMath() {
@@ -100,13 +100,12 @@ public class Translator implements translateJob
 				return Float.NaN;
 			}
 		}
-		
+
 		if (arithmetic_op.equals("divide") && inputTwo == 0)
 		{
 			System.out.println ("Error: Cannot divide by 0.");
 			return Float.NaN;
 		}
-		
 		
 		if (arithmetic_op.equals("divide") || arithmetic_op.equals("power"))
 		{

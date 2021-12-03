@@ -42,7 +42,7 @@ public class MathClass implements PerformMathOperations{
     }
     @Override
     public float doSubtraction(float num1,float num2) {
-        float SubtructionResult= num1-num2;
+        float SubtructionResult= num2-num1;
         return SubtructionResult;
     }
     @Override

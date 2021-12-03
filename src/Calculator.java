@@ -18,7 +18,7 @@ public class Calculator
 //		MathClass.division_test_case();
 //		MathClass.power_test_case();
 //		integration_test_1();
-		integration_test_2();
+		// integration_test_2();
 		
 		
 		
