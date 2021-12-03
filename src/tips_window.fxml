@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="823.0" prefWidth="564.0" style="-fx-border-width: 10; -fx-border-color: #000000; -fx-background-color: #00458B;" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller">
+   <children>
+      <Label alignment="CENTER" layoutX="1.0" layoutY="1.0" prefHeight="114.0" prefWidth="564.0" style="-fx-border-color: #000000; -fx-border-width: 10; -fx-background-color: #00458B;" text="TIPS" textFill="#3fd2c7">
+         <font>
+            <Font name="Roboto" size="55.0" />
+         </font>
+      </Label>
+      <TextArea fx:id="instructions" editable="false" layoutX="11.0" layoutY="115.0" prefHeight="640.0" prefWidth="545.0" text=" &#10;  INSTRUCTIONS&#10;&#10;  After each input you should press enter or click run to do the &#10;  computation.&#10;&#10;  1. Enter one of the following operation:&#10;            add __ to __&#10;            substract __ from __&#10;            multiply __ and __&#10;            divide __ from __&#10;            power __ to __&#10;&#10;  2. Enter the two numbers to perform the operation.&#10;&#10;  3.  Choose how many times you want to repeat the &#10;       operation by entering a number folowed by “times” at the &#10;       end of a calculation.&#10;&#10;  4. The result of your calculation can be reused using “x” &#10;      instead of a number.&#10;&#10;                       SCROLL DOWN FOR EXAMPLES&#10;&#10;  multiply 3 by 4&#10;  x = 12&#10;&#10;  divide 5 by 0&#10;&#10;  Error: It is not possible to divide by 0. &#10;  Please enter another number.&#10;&#10;  do divide 5 by 5&#10;   x = 1&#10;&#10;&#10;">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </TextArea>
+   </children>
+</AnchorPane>
