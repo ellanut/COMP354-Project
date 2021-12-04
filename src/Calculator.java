@@ -1,6 +1,5 @@
 import java.util.ArrayList;
 import java.util.Arrays;
-// import java.util.Scanner;
 
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
@@ -10,21 +9,21 @@ import javafx.stage.Stage;
 
 public class Calculator extends Application
 {
+	// Called when JavaFX Application is started
 	@Override
     public void start(Stage primaryStage) throws Exception{
-        Parent root = FXMLLoader.load(Calculator.class.getResource("calculator_notebook.fxml"));
+        Parent root = FXMLLoader.load(Calculator.class.getResource("calculator_notebook_with_history.fxml")); // Load FXML file of UI
         Scene scene = new Scene(root);
         primaryStage.setTitle("Calculator Notebook");
         primaryStage.setScene(scene);
-        primaryStage.show();
-		
+        primaryStage.show(); // Make the application visible in a window
     }
 
 	public static void main(String[] args)
 	{
-        launch(args); // launch the GUI
+        launch(args); // launch the JavaFX runtime and application
 
-//  Uncomment the method to run the test case of the corresponding Component
+//		Comment Line 25, and Uncomment the method to run the test case of the corresponding Component.
 //		Editor.test_case_1();
 //		Editor.test_case_2();
 //		Translator.test_case_1();
@@ -36,29 +35,13 @@ public class Calculator extends Application
 //		MathClass.division_test_case();
 //		MathClass.power_test_case();
 //		integration_test_1();
-//		integration_test_2();
+// 		integration_test_2();
 		
-		
-		
-		
-		// String choice = "";
-		// do {
-		// 	Editor editor = new Editor();
-		// 	ArrayList<String> arrayList = new ArrayList<>();
-		// 	arrayList = editor.Read();
-		// 	MathClass math = new MathClass();
-		// 	Translator translator = new Translator(math);
-		// 	System.out.println(translator.translate(arrayList));
-			
-		// 	System.out.println("Do you want to go again?");
-		// 	Scanner in = new Scanner(System.in);
-		// 	choice = in.next();
-		// } while (choice.equals("yes"));
 	}
-	
+
+	//Integration test between editor and translator
 	public static void integration_test_1()
 	{
-		//Integration test between editor and translator
 		Editor editor = new Editor();
 		ArrayList<String> arrayList = new ArrayList<>();
 		arrayList = editor.takeInput("subtract 5 from 2 loop 2 times");
@@ -70,13 +53,13 @@ public class Calculator extends Application
 		translator.translate(arrayList);
 	}
 	
+	//Integration test between Translator and MathClass
 	public static void integration_test_2()
 	{
-		//Integration test between Translator and MathClass
 		ArrayList<String> arrayList = new ArrayList<>(Arrays.asList("add", "5", "to", "6", "loop", "2", "times"));
 		MathClass math = new MathClass();
 		Translator translator = new Translator(math);
-		float result = translator.translate(arrayList);
+		String result = translator.translate(arrayList);
 		String arithmetic_op = translator.getArithmetic_op();
 		float inputOne = translator.getInputOne();
 		float inputTwo = translator.getInputTwo();

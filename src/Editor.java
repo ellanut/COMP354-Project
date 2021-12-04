@@ -40,23 +40,21 @@ public class Editor implements editJob{
 		this.userInput = userInput;
 	}
 
+	// THIS THINGY LOOKS USELESS '-' PLEASE DOUBLE CHECK
 	public ArrayList<String> Read(String userInput) {
-		// System.out.println("Please input a valid order");
 
 		words2 = new ArrayList<String>();
 
 		setUserInput(userInput);
 		String line = getUserInput();
-		String [] words = line.split(" ");
-			
-		    if(words.length == 4 || words.length == 7) {
-		        words2 = new ArrayList<>(Arrays.asList(words));
-		    }
-		    else
-		        System.out.println("wrong number of inputs, try again");
+		String [] words = line.split(" "); // split the user's input and store each word in an array
+	
+		words2 = new ArrayList<>(Arrays.asList(words)); 
+
 		return words2;		
 	}
 
+	// TEST CASE METHOD: Splits the input into words and store each word in an Array List
 	public ArrayList<String> takeInput(String input) {
 		
 		String line = input;
@@ -65,14 +63,14 @@ public class Editor implements editJob{
 		return words2;		
 	}
 	
+	// Reads the test case and display if the number of words (input) is correct or not 
 	public void Read_Test_Cases() {
 			words = getUserInput().split(" ");			
 		        if(words.length == 4 || words.length == 7) {
-		        	System.out.println("correct, the input is: " + getUserInput());  
+		        	System.out.println("Correct, the input is: " + getUserInput());  
 		        }
 		        else
-		            System.out.println("wrong, the input is: " + getUserInput());	
-					//errorGUI.setText(errorGUI.getText()+"blabla");
+		            System.out.println("Wrong, the input is: " + getUserInput());	
 	}
 
 	//Checks that the number of inputs is correct.
@@ -98,7 +96,8 @@ public class Editor implements editJob{
 		System.out.println(Arrays.toString(t2.words));
 		System.out.println("The output should be: \"[add, 4, to, 7, loop, 5, times]\"");
 	}
-	
+
+	// Test case purpose
 //	public static void test_case_3()
 //	{
 //		String test3 = "add 4 to 7 loop 5 times";

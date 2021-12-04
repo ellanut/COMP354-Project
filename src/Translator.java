@@ -62,52 +62,59 @@ public class Translator implements translateJob
 	{
 		this.math = math;
 	}
-	
-	public float translate(ArrayList<String> stringArray)
+
+	// Converts the user's input into the numeral result 
+	public String translate(ArrayList<String> stringArray)
 	{
-		
+		// Checks if the 2nd and 4th word is a number
 		try 
 		{
 			arithmetic_op = stringArray.get(0);
 			inputOne = Float.parseFloat(stringArray.get(1));
 			inputTwo = Float.parseFloat(stringArray.get(3));
 		}
-		catch (NumberFormatException e)
+		catch (Exception e)
 		{
-			System.out.print("The 2nd and 4th input need to be numbers.");
-			return Float.NaN;
+			String message = "Error: The 2nd and 4th input need to be numbers.";
+			return message;
 		}
 		
+		// Condition where the user input must be of 7 words
 		if (stringArray.size() == 7)
 		{
 			try
 			{
-				numberOfLoops = Integer.parseInt(stringArray.get(5));
+				numberOfLoops = Integer.parseInt(stringArray.get(5)); // gets the number of loop from the user input
 			}
-			catch (NumberFormatException e)
+			// Prints an error message if the 5th words isn't a number
+			catch (Exception e)
 			{
-				System.out.print("The number of loops needs to be a number.");
-				return Float.NaN;
+				String message = "Error: The number of loops needs to be a number.";
+				return message;
 			}
+			// Prints an error if the number is a negative number
 			if (numberOfLoops <= 0) 
 			{
-	            System.out.println ("Error: Input for the loop must be a positive integer.");
-	            return Float.NaN;
+				String message = "Error: Input for the loop must be a positive integer.";
+				return message;
+
 	        }
+			// Prints an error if the syntax isn't valid to execute the loop function
 			if (!(stringArray.get(4).equals("loop") && stringArray.get(6).equals("times")))
 			{
-				System.out.println ("Error: Invalid syntax for the loop.");
-				return Float.NaN;
+				String message = "Error: Invalid syntax for the loop.";
+				return message;
 			}
 		}
 		
+		// Prints an error if user tries to divide by 0
 		if (arithmetic_op.equals("divide") && inputTwo == 0)
 		{
-			System.out.println ("Error: Cannot divide by 0.");
-			return Float.NaN;
+			String message = "Error: Cannot divide by 0.";
+			return message;
 		}
 		
-		
+		// Checks if the first word is "divide" or "power", execute the correct looping
 		if (arithmetic_op.equals("divide") || arithmetic_op.equals("power"))
 		{
 			inputOne_loop = (int) (inputTwo*numberOfLoops);
@@ -116,25 +123,30 @@ public class Translator implements translateJob
 		{
 			inputOne_loop = (int) (inputOne*numberOfLoops);
 		}
-		
+		// Checks for the 1st word and 3rd word to execute the correct operation
 		if (arithmetic_op.equals("add") && stringArray.get(2).equals("to"))
-			return math.doAddition(inputOne_loop, inputTwo);
+			return Float.toString(math.doAddition(inputOne_loop, inputTwo));	
+
 		else if (arithmetic_op.equals("subtract") && stringArray.get(2).equals("from"))
-			return math.doSubtraction(inputOne_loop, inputTwo);
+			return Float.toString(math.doSubtraction(inputOne_loop, inputTwo));
+
 		else if (arithmetic_op.equals("multiply") && stringArray.get(2).equals("by"))
-			return math.doMultiplication(inputOne_loop, inputTwo);
+			return Float.toString(math.doMultiplication(inputOne_loop, inputTwo));
+
 		else if (arithmetic_op.equals("divide") && stringArray.get(2).equals("by"))
-			return math.doDivision(inputOne, inputOne_loop);
+			return Float.toString(math.doDivision(inputOne_loop, inputTwo));
+
 		else if (arithmetic_op.equals("power") && stringArray.get(2).equals("to"))
-			return math.doPower(inputOne,inputOne_loop);
+			return Float.toString(math.doPower(inputOne, inputOne_loop));
+
 		else
 		{
-			System.out.println("Error: Invalid syntax.");
-			return Float.NaN;
+			String message = "Error: Invalid syntax.";
+			return message;
 		}
 	}
 	
-	//Test for Divison by 0
+	// Test Case for dividing by 0
 	public static void test_case_1()
 	{
 		MathClass math = new MathClass();
@@ -144,7 +156,7 @@ public class Translator implements translateJob
 		System.out.println("Output should be: \"Error: Cannot divide by 0.\"");
 	}
 	
-	//Testing for non-positive numbers for loops in the input.
+	// Test case for non-positive numbers for loops in the input.
 	public static void test_case_2()
 	{
 		MathClass math = new MathClass();
@@ -154,6 +166,7 @@ public class Translator implements translateJob
 		System.out.println("Output should be: \"Error: Input for the loop must be a positive integer.\"");
 	}
 
+	// Test case that ????
 	public static void test_case_3()
 	{
 		MathClass math = new MathClass();
