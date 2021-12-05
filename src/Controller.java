@@ -85,39 +85,5 @@ public class Controller {
         resultMessage.setText(result); //display result to user 
     }
 
-    public void runEnter() {
-        errorMessage = " "; // initialize errorMessage every time the run button is used
-        userInput = editorGUI.getText();   // get text and store it in variable userInput
-        history.appendText(userInput + "\n"); // append user's input in the history Text Area
 
-        // System.out.println("Here's what you typed: " + userInput);
-
-        Editor editor = new Editor();
-        ArrayList<String> arrayList = new ArrayList<>();
-        arrayList = editor.Read(userInput); 
-
-        String line = userInput;
-        String [] words = line.split(" "); // split the user's input and store each word in an array
-        
-        // check if user input is 4 or 7 words
-        if(words.length == 4 || words.length == 7) {     
-            MathClass math = new MathClass();  
-            Translator translator = new Translator(math);   
-            result = translator.translate(arrayList); // store the result of the arithmetic operation in result variable
-
-            // check if variable result returns an Error message
-            if(result.contains("Error")) {
-                errorMessage = result;  // set errorMessage to that error message
-                result = "NaN"; // set result to String "NaN"
-            }
-        }
-        // if user input is not 4 or 7 words, ask the user to try again.
-        else {
-            errorMessage = "Error: Wrong number of inputs, try again.";
-            result = "NaN";
-        }
-        
-        errorGUI.setText(errorMessage); // display error message to user
-        resultMessage.setText(result); //display result to user 
-    }
 }

@@ -1,4 +1,3 @@
-import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Arrays;
 
@@ -6,7 +5,6 @@ import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
-import javafx.scene.input.KeyCode;
 import javafx.stage.Stage;
 
 public class Calculator extends Application
@@ -14,18 +12,8 @@ public class Calculator extends Application
 	// Called when JavaFX Application is started
 	@Override
     public void start(Stage primaryStage) throws Exception{
-        FXMLLoader loader = new FXMLLoader(Calculator.class.getResource("calculator_notebook_with_history.fxml"));
-		Parent root = loader.load(); // Load FXML file of UI
-		Controller controller = loader.getController();
+        Parent root = FXMLLoader.load(Calculator.class.getResource("calculator_notebook_with_history.fxml")); // Load FXML file of UI
         Scene scene = new Scene(root);
-
-		scene.setOnKeyPressed(event -> {
-			switch (event.getCode()) {
-				case ENTER:
-					controller.runEnter();
-			}
-		});
-
         primaryStage.setTitle("Calculator Notebook");
         primaryStage.setScene(scene);
         primaryStage.show(); // Make the application visible in a window
@@ -35,7 +23,7 @@ public class Calculator extends Application
 	{
         launch(args); // launch the JavaFX runtime and application
 
-//		Comment Line 25, and Uncomment the method to run the test case of the corresponding Component.
+//		Comment Line 24, and Uncomment the method to run the test case of the corresponding Component.
 //		Editor.test_case_1();
 //		Editor.test_case_2();
 //		Translator.test_case_1();
