@@ -10,7 +10,7 @@
 
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="823.0" prefWidth="1178.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller">
    <children>
-      <Label fx:id="title" alignment="CENTER" prefHeight="123.0" prefWidth="971.0" style="-fx-background-color: #3FD2C7; -fx-border-width: 10; -fx-border-color: #000000;" text="Calculator Notebook" textFill="WHITE">
+      <Label alignment="CENTER" prefHeight="123.0" prefWidth="971.0" style="-fx-background-color: #3FD2C7; -fx-border-width: 10; -fx-border-color: #000000;" text="Calculator Notebook" textFill="WHITE">
          <font>
             <Font size="55.0" />
          </font>
@@ -37,7 +37,7 @@
                         </AnchorPane>
                     </content>
                   </ScrollPane>
-                  <Label fx:id="historyTitle" layoutX="1.0" layoutY="-3.0" prefHeight="75.0" prefWidth="882.0" text="HISTORY" textFill="#00458b">
+                  <Label layoutX="1.0" layoutY="-3.0" prefHeight="75.0" prefWidth="882.0" text="HISTORY" textFill="#00458b">
                      <font>
                         <Font size="55.0" />
                      </font>
