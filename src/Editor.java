@@ -96,17 +96,4 @@ public class Editor implements editJob{
 		System.out.println(Arrays.toString(t2.words));
 		System.out.println("The output should be: \"[add, 4, to, 7, loop, 5, times]\"");
 	}
-
-	// Test case purpose
-//	public static void test_case_3()
-//	{
-//		String test3 = "add 4 to 7 loop 5 times";
-//		Editor t3 = new Editor(test3);
-//		t3.Read();
-//		String in = t3.getUserInput();
-//		if (in.equals(""))
-//			System.out.println("No input was read.");
-//		else
-//			System.out.println("Input " + in + " was read.");
-//	}
 }

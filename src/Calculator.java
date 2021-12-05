@@ -1,3 +1,4 @@
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Arrays;
 
@@ -5,6 +6,7 @@ import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.input.KeyCode;
 import javafx.stage.Stage;
 
 public class Calculator extends Application
@@ -12,8 +14,18 @@ public class Calculator extends Application
 	// Called when JavaFX Application is started
 	@Override
     public void start(Stage primaryStage) throws Exception{
-        Parent root = FXMLLoader.load(Calculator.class.getResource("calculator_notebook_with_history.fxml")); // Load FXML file of UI
+        FXMLLoader loader = new FXMLLoader(Calculator.class.getResource("calculator_notebook_with_history.fxml"));
+		Parent root = loader.load(); // Load FXML file of UI
+		Controller controller = loader.getController();
         Scene scene = new Scene(root);
+
+		scene.setOnKeyPressed(event -> {
+			switch (event.getCode()) {
+				case ENTER:
+					controller.runEnter();
+			}
+		});
+
         primaryStage.setTitle("Calculator Notebook");
         primaryStage.setScene(scene);
         primaryStage.show(); // Make the application visible in a window

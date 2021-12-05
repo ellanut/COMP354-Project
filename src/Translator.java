@@ -166,7 +166,7 @@ public class Translator implements translateJob
 		System.out.println("Output should be: \"Error: Input for the loop must be a positive integer.\"");
 	}
 
-	// Test case that ????
+	// Test case that checks that the first word from the user input is read correctly
 	public static void test_case_3()
 	{
 		MathClass math = new MathClass();
