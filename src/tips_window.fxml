@@ -4,18 +4,23 @@
 <?import javafx.scene.control.TextArea?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
+<?import javafx.scene.text.TextFlow?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="823.0" prefWidth="564.0" style="-fx-border-width: 10; -fx-border-color: #000000; -fx-background-color: #00458B;" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="823.0" prefWidth="564.0" style="-fx-border-width: 10; -fx-border-color: #000000; -fx-background-color: #00458B;" stylesheets="styles.css" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller">
    <children>
-      <Label alignment="CENTER" layoutX="1.0" layoutY="1.0" prefHeight="114.0" prefWidth="564.0" style="-fx-border-color: #000000; -fx-border-width: 10; -fx-background-color: #00458B;" text="TIPS" textFill="#3fd2c7">
+      <Label alignment="CENTER" layoutX="1.0" layoutY="1.0" prefHeight="114.0" prefWidth="564.0" style="-fx-border-color: #000000; -fx-border-width: 10; -fx-background-color: #00458B; -fx-font-family: Roboto;" text="TIPS" textFill="#3fd2c7">
          <font>
-            <Font name="Roboto" size="55.0" />
+            <Font size="55.0" />
          </font>
       </Label>
-      <TextArea fx:id="instructions" editable="false" layoutX="11.0" layoutY="115.0" prefHeight="697.0" prefWidth="545.0" text="&#10;  INSTRUCTIONS:&#10;&#10;  Type one of following operations:&#10;    1. add  __  to  __&#10;   2. subtract  __  from  __&#10;    3. multiply  __  by  __&#10;    4. divide  __  by  __&#10;    5. power  __  to  __&#10;&#10;  where ___ are numbers.&#10;&#10;  If looping is desired: follow up 1 to 5 with &quot;loop y times&quot;,&#10;  where y is an integer.&#10;&#10;  the number of loops is the number of times we do the &#10;  operation&#10;  EX: add 5 to 6 loop 5 times = 5 + 6 + 6 + 6 + 6 + 6&#10;&#10;  Click run to display the result.&#10;&#10;  It is important to:&#10;  1. use specific keywords like &quot;to&quot;, &quot;from&quot;, &quot;by&quot; and &quot;loop&quot;, &#10;  or else the program won't recognize the input&#10;  2. don't divide by 0&#10;  3. loop by a positive integer, meaning you can't say &#10;  &quot;loop -6 times&quot; for example&#10;&#10;  EXAMPLES:&#10;&#10;  Here are some examples of accepted input:&#10;&#10;  multiply 2 by 4&#10;  x = 8&#10;&#10;  add 2 to 4 loop 3 times&#10;  x = 10&#10;&#10;  The program will display the result under your input as &#10;  well as in the RESULT section at the bottom&#10;&#10;  Here are some examples of unnaccepted input:&#10;&#10;  divide 5 by 0&#10;  Error: Cannot divide by 0.&#10;&#10;  subtract 5 from 10 loop -5 times&#10;  Error: Input for the loop must be a positive integer.">
-         <font>
-            <Font size="18.0" />
-         </font>
-      </TextArea>
+      <TextFlow layoutX="11.0" layoutY="115.0" prefHeight="697.0" prefWidth="535.0">
+         <children>
+            <TextArea fx:id="instructions" editable="false" prefHeight="697.0" prefWidth="545.0" text="&#10;  INSTRUCTIONS:&#10;&#10;  Type one of following operations:&#10;    1. add  __  to  __&#10;   2. subtract  __  from  __&#10;    3. multiply  __  by  __&#10;    4. divide  __  by  __&#10;    5. power  __  to  __&#10;&#10;  where ___ are numbers.&#10;&#10;  If looping is desired: follow up 1 to 5 with &quot;loop y times&quot;,&#10;  where y is an integer.&#10;&#10;  the number of loops is the number of times we do the &#10;  operation&#10;  EX: add 5 to 6 loop 5 times = 5 + 6 + 6 + 6 + 6 + 6&#10;&#10;  Click run to display the result.&#10;&#10;  It is important to:&#10;  1. use specific keywords like &quot;to&quot;, &quot;from&quot;, &quot;by&quot; and &quot;loop&quot;, &#10;  or else the program won't recognize the input&#10;  2. don't divide by 0&#10;  3. loop by a positive integer, meaning you can't say &#10;  &quot;loop -6 times&quot; for example&#10;&#10;  EXAMPLES:&#10;&#10;  Here are some examples of accepted input:&#10;&#10;  multiply 2 by 4&#10;  x = 8&#10;&#10;  add 2 to 4 loop 3 times&#10;  x = 10&#10;&#10;  The program will display the result under your input as &#10;  well as in the RESULT section at the bottom&#10;&#10;  Here are some examples of unnaccepted input:&#10;&#10;  divide 5 by 0&#10;  Error: Cannot divide by 0.&#10;&#10;  subtract 5 from 10 loop -5 times&#10;  Error: Input for the loop must be a positive integer.">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </TextArea>
+         </children>
+      </TextFlow>
    </children>
 </AnchorPane>
