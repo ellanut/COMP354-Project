@@ -74,7 +74,8 @@ public class Translator implements translateJob
 			inputTwo = Float.parseFloat(stringArray.get(3));
 		}
 		catch (Exception e)
-		{
+		{	
+			System.out.println("Error: The 2nd and 4th input need to be numbers.");
 			String message = "Error: The 2nd and 4th input need to be numbers.";
 			return message;
 		}
@@ -89,12 +90,14 @@ public class Translator implements translateJob
 			// Prints an error message if the 5th words isn't a number
 			catch (Exception e)
 			{
+				System.out.println("Error: The number of loops needs to be a number.");
 				String message = "Error: The number of loops needs to be a number.";
 				return message;
 			}
 			// Prints an error if the number is a negative number
 			if (numberOfLoops <= 0) 
 			{
+				System.out.println ("Error: Input for the loop must be a positive integer.");
 				String message = "Error: Input for the loop must be a positive integer.";
 				return message;
 
@@ -102,6 +105,7 @@ public class Translator implements translateJob
 			// Prints an error if the syntax isn't valid to execute the loop function
 			if (!(stringArray.get(4).equals("loop") && stringArray.get(6).equals("times")))
 			{
+				System.out.println ("Error: Invalid syntax for the loop.");
 				String message = "Error: Invalid syntax for the loop.";
 				return message;
 			}
@@ -110,6 +114,7 @@ public class Translator implements translateJob
 		// Prints an error if user tries to divide by 0
 		if (arithmetic_op.equals("divide") && inputTwo == 0)
 		{
+			System.out.println ("Error: Cannot divide by 0.");
 			String message = "Error: Cannot divide by 0.";
 			return message;
 		}
@@ -134,13 +139,14 @@ public class Translator implements translateJob
 			return Float.toString(math.doMultiplication(inputOne_loop, inputTwo));
 
 		else if (arithmetic_op.equals("divide") && stringArray.get(2).equals("by"))
-			return Float.toString(math.doDivision(inputOne_loop, inputTwo));
+			return Float.toString(math.doDivision(inputOne, inputOne_loop));
 
 		else if (arithmetic_op.equals("power") && stringArray.get(2).equals("to"))
 			return Float.toString(math.doPower(inputOne, inputOne_loop));
 
 		else
 		{
+			System.out.println("Error: Invalid syntax.");
 			String message = "Error: Invalid syntax.";
 			return message;
 		}

@@ -21,7 +21,7 @@ public class Calculator extends Application
 
 	public static void main(String[] args)
 	{
-        launch(args); // launch the JavaFX runtime and application
+//        launch(args); // launch the JavaFX runtime and application
 
 //		Comment Line 24, and Uncomment the method to run the test case of the corresponding Component.
 //		Editor.test_case_1();
@@ -36,10 +36,9 @@ public class Calculator extends Application
 //		MathClass.power_test_case();
 //		integration_test_1();
 // 		integration_test_2();
-		
 	}
 
-	//Integration test between editor and translator
+	//Integration test between editor and translator: Ensuring that the output from Editor is sent to the Translator correctly
 	public static void integration_test_1()
 	{
 		Editor editor = new Editor();
@@ -53,7 +52,7 @@ public class Calculator extends Application
 		translator.translate(arrayList);
 	}
 	
-	//Integration test between Translator and MathClass
+	//Integration test between Translator and MathClass: Translated output is sent to the MathClass; the correct arithmetic operation must be chosen by the MathClass
 	public static void integration_test_2()
 	{
 		ArrayList<String> arrayList = new ArrayList<>(Arrays.asList("add", "5", "to", "6", "loop", "2", "times"));

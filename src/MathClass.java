@@ -82,18 +82,8 @@ public class MathClass implements PerformMathOperations{
     	MathClass math = new MathClass();
     	float result = math.doSubtraction(5, 3);
     	System.out.println("Result: " + result);
-    	System.out.println("Output should be: \"Result: 2.0\"");
+    	System.out.println("Output should be: \"Result: -2.0\"");
     }
-    
-	// Test case that checks if the division operation works
-    public static void division_test_case()
-    {
-    	MathClass math = new MathClass();
-    	float result = math.doDivision(5, 2);
-    	System.out.println("Result: " + result);
-    	System.out.println("Output should be: \"Result: 2.5\"");
-    }
-    
 	// Test case that checks if the multiplication operation works
     public static void multiplication_test_case()
     {
@@ -101,6 +91,15 @@ public class MathClass implements PerformMathOperations{
     	float result = math.doMultiplication(5, 3);
     	System.out.println("Result: " + result);
     	System.out.println("Output should be: \"Result: 15.0\"");
+    }    
+
+	// Test case that checks if the division operation works
+    public static void division_test_case()
+    {
+    	MathClass math = new MathClass();
+    	float result = math.doDivision(5, 2);
+    	System.out.println("Result: " + result);
+    	System.out.println("Output should be: \"Result: 2.5\"");
     }
     
 	// Test case that checks if the power operation works
