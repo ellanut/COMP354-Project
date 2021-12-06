@@ -15,7 +15,7 @@ public class Calculator extends Application
         Parent root = FXMLLoader.load(Calculator.class.getResource("calculator_notebook_with_history.fxml")); // Load FXML file of UI
         Scene scene = new Scene(root);
         primaryStage.setTitle("Calculator Notebook");
-        primaryStage.setScene(scene);
+        primaryStage.setScene(scene);	 
         primaryStage.show(); // Make the application visible in a window
     }
 
