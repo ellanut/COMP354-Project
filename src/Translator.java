@@ -109,8 +109,7 @@ public class Translator implements translateJob
 				String message = "Error: Invalid syntax for the loop.";
 				return message;
 			}
-		}
-		
+		}	
 		// Prints an error if user tries to divide by 0
 		if (arithmetic_op.equals("divide") && inputTwo == 0)
 		{
@@ -118,7 +117,7 @@ public class Translator implements translateJob
 			String message = "Error: Cannot divide by 0.";
 			return message;
 		}
-		
+    
 		// Checks if the first word is "divide" or "power", execute the correct looping
 		if (arithmetic_op.equals("divide") || arithmetic_op.equals("power"))
 		{
