@@ -152,35 +152,43 @@ public class Translator implements translateJob
 		}
 	}
 	
-	// Test Case for dividing by 0
+	// TRANSLATOR TEST CASE 1: Check for division by 0.
 	public static void test_case_1()
 	{
+		System.out.println("TRANSLATOR TEST CASE 1: Check for division by 0.");
 		MathClass math = new MathClass();
 		Translator translator = new Translator(math);
+		System.out.println("INPUT: Divide 5 by 0");
+		System.out.print("OUTPUT: ");
 		ArrayList<String> arrayList = new ArrayList<>(Arrays.asList("divide", "5", "by", "0"));
 		translator.translate(arrayList);
-		System.out.println("Output should be: \"Error: Cannot divide by 0.\"");
+		System.out.println("EXPECTED OUTPUT: \"Error: Cannot divide by 0.\" \n");
 	}
 	
-	// Test case for non-positive numbers for loops in the input.
+	// TRANSLATOR TEST CASE 2: Check for non-positive numbers for loops in the input.
 	public static void test_case_2()
 	{
+		System.out.println("TRANSLATOR TEST CASE 2: Check for non-positive numbers for loops in the input.");
 		MathClass math = new MathClass();
 		Translator translator = new Translator(math);
+		System.out.println("INPUT: Divide 5 by 0 loop -2 times");
+		System.out.print("OUTPUT: ");
 		ArrayList<String> arrayList = new ArrayList<>(Arrays.asList("divide", "5", "by", "2", "loop", "-2", "times"));
 		translator.translate(arrayList);
-		System.out.println("Output should be: \"Error: Input for the loop must be a positive integer.\"");
+		System.out.println("EXPECTED OUTPUT: \"Error: Input for the loop must be a positive integer.\" \n");
 	}
 
-	// Test case that checks that the first word from the user input is read correctly
+	// TRANSLATOR TEST CASE 3: Check that the first word from the user input is read correctly.
 	public static void test_case_3()
 	{
+		System.out.println("TRANSLATOR TEST CASE 3: Check that the first word from the user input is read correctly.");
 		MathClass math = new MathClass();
 		Translator translator = new Translator(math);
+		System.out.println("INPUT: Divide 5 by 2 loop 2 times");
 		ArrayList<String> arrayList = new ArrayList<>(Arrays.asList("divide", "5", "by", "2", "loop", "2", "times"));
 		translator.translate(arrayList);
 		String operation = translator.arithmetic_op;
-		System.out.println("Operation: " + operation);
-		System.out.println("Output should be: \"Operation: divide\"");
+		System.out.println("OUTPUT: Operation: " + operation);
+		System.out.println("EXPECTED OUTPUT: \"Operation: divide\" \n");
 	}
 }

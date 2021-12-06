@@ -40,21 +40,21 @@ public class Editor implements editJob{
 		this.userInput = userInput;
 	}
 
-	// THIS THINGY LOOKS USELESS '-' PLEASE DOUBLE CHECK
+	// Splits the user's input and store each word in an ArrayList
 	public ArrayList<String> Read(String userInput) {
 
 		words2 = new ArrayList<String>();
 
 		setUserInput(userInput);
 		String line = getUserInput();
-		String [] words = line.split(" "); // split the user's input and store each word in an array
+		String [] words = line.split(" "); 
 	
 		words2 = new ArrayList<>(Arrays.asList(words)); 
 
 		return words2;		
 	}
 
-	// TEST CASE METHOD: Splits the input into words and store each word in an Array List
+	// TEST CASE METHOD: Splits the input into words and store each word into an Array List
 	public ArrayList<String> takeInput(String input) {
 		
 		String line = input;
@@ -73,27 +73,36 @@ public class Editor implements editJob{
 		            System.out.println("Wrong, the input is: " + getUserInput());	
 	}
 
-	//Checks that the number of inputs is correct.
+	// EDITOR TEST CASE 1: Checks that the number of inputs is correct.
 	public static void test_case_1()
 	{
+		System.out.println("EDITOR TEST CASE 1.1: Checking that the number of inputs is correct.");
 		String test1 = "add 4 to 7 loop 5 times";
+		System.out.println("INPUT: " + test1);
+		System.out.print("OUTPUT: ");
 		Editor t2 = new Editor(test1);
 		t2.Read_Test_Cases();
-		System.out.println("The output should be: \"correct, the input is: add 4 to 7 loop 5 times\"");
+		System.out.println("EXPECTED OUTPUT: \"Correct, the input is: add 4 to 7 loop 5 times\" \n");
 		
+		System.out.println("EDITOR TEST CASE 1.2: Checking that the number of inputs is incorrect.");
 		String test2 = "add 4 to 7 loop 5";
+		System.out.println("INPUT: " + test2);
+		System.out.print("OUTPUT: ");
 		Editor t3 = new Editor(test2);
 		t3.Read_Test_Cases();
-		System.out.println("The output should be: \"wrong, the input is: add 4 to 7 loop 5\"");
+		System.out.println("EXPECTED OUTPUT: \"Wrong, the input is: add 4 to 7 loop 5\" \n");
 	}
 	
-	//Checks that the words are split correctly.
+	// EDITOR TEST CASE 2: Checks that the words are split correctly.
 	public static void test_case_2()
 	{
+		System.out.println("EDITOR TEST CASE 2: Checks that the words are split correctly.");
 		String test2 = "add 4 to 7 loop 5 times";
+		System.out.println("INPUT: " + test2);
+		System.out.print("OUTPUT: ");
 		Editor t2 = new Editor(test2);
-		t2.Read_Test_Cases();
-		System.out.println(Arrays.toString(t2.words));
-		System.out.println("The output should be: \"[add, 4, to, 7, loop, 5, times]\"");
+		Object[] output = t2.Read(test2).toArray();
+		System.out.println(Arrays.toString(output));
+		System.out.println("EXPECTED OUTPUT: \"[add, 4, to, 7, loop, 5, times]\" \n");
 	}
 }

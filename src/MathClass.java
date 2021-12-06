@@ -67,48 +67,63 @@ public class MathClass implements PerformMathOperations{
         return PowerResult;
     }
     
-	// Test case that checks if the addition operation works
+
+	// Test cases variables
+	static int numTest1 = 5;
+	static int numTest2 = 3;
+
+	// MATHCLASS TEST CASE 1: Checks if the addition arithmetic operation works.
     public static void addition_test_case()
     {
+		System.out.println("MATHCLASS TEST CASE 1: Checks if the addition arithmetic operation works.");
     	MathClass math = new MathClass();
-    	float result = math.doAddition(5, 3);
-    	System.out.println("Result: " + result);
-    	System.out.println("Output should be: \"Result: 8.0\"");
+    	float result = math.doAddition(numTest1, numTest2);
+		System.out.println("INPUT: " + numTest1 + " & " + numTest2);
+    	System.out.println("OUTPUT: " + result);
+    	System.out.println("EXPECTED OUTPUT: \"8.0\" \n");
     }
     
-	// Test case that checks if the subtraction operation works
+	// MATHCLASS TEST CASE 2: Checks if the subtraction arithmetic operation works.
     public static void subtraction_test_case()
     {
+		System.out.println("MATHCLASS TEST CASE 2: Checks if the subtraction arithmetic operation works.");
     	MathClass math = new MathClass();
-    	float result = math.doSubtraction(5, 3);
-    	System.out.println("Result: " + result);
-    	System.out.println("Output should be: \"Result: -2.0\"");
+    	float result = math.doSubtraction(numTest1, numTest2);
+		System.out.println("INPUT: " + numTest1 + " & " + numTest2);
+    	System.out.println("OUTPUT: " + result);
+    	System.out.println("EXPECTED OUTPUT: \"-2.0\" \n");
     }
-	// Test case that checks if the multiplication operation works
+	// MATHCLASS TEST CASE 3: Checks if the multiplication arithmetic operation works.
     public static void multiplication_test_case()
     {
+		System.out.println("MATHCLASS TEST CASE 3: Checks if the multiplication arithmetic operation works.");
     	MathClass math = new MathClass();
-    	float result = math.doMultiplication(5, 3);
-    	System.out.println("Result: " + result);
-    	System.out.println("Output should be: \"Result: 15.0\"");
+    	float result = math.doMultiplication(numTest1, numTest2);
+		System.out.println("INPUT: " + numTest1 + " & " + numTest2);
+    	System.out.println("OUTPUT: " + result);
+    	System.out.println("EXPECTED OUTPUT: \"15.0\" \n");
     }    
 
-	// Test case that checks if the division operation works
+	// MATHCLASS TEST CASE 4: Checks if the division arithmetic operation works.
     public static void division_test_case()
     {
+		System.out.println("MATHCLASS TEST CASE 4: Checks if the division arithmetic operation works.");
     	MathClass math = new MathClass();
-    	float result = math.doDivision(5, 2);
-    	System.out.println("Result: " + result);
-    	System.out.println("Output should be: \"Result: 2.5\"");
+    	float result = math.doDivision(numTest1, numTest2);
+		System.out.println("INPUT: " + numTest1 + " & " + numTest2);
+    	System.out.println("OUTPUT: " + result);
+    	System.out.println("EXPECTED OUTPUT: \"1.6666666\" \n");
     }
     
-	// Test case that checks if the power operation works
+	// MATHCLASS TEST CASE 5: Checks if the power arithmetic operation works.
     public static void power_test_case()
     {
+		System.out.println("MATHCLASS TEST CASE 5: Checks if the power arithmetic operation works.");
     	MathClass math = new MathClass();
-    	float result = math.doPower(5, 3);
-    	System.out.println("Result: " + result);
-    	System.out.println("Output should be: \"Result: 125.0\"");
+    	float result = math.doPower(numTest1, numTest2);
+		System.out.println("INPUT: " + numTest1 + " & " + numTest2);
+    	System.out.println("OUTPUT: " + result);
+    	System.out.println("EXPECTED OUTPUT: \"125.0\" \n");
     }
     
 }

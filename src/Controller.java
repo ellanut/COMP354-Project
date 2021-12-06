@@ -54,11 +54,9 @@ public class Controller {
         userInput = editorGUI.getText();   // get text and store it in variable userInput
         history.appendText(userInput + "\n"); // append user's input in the history Text Area
 
-        // System.out.println("Here's what you typed: " + userInput);
-
         Editor editor = new Editor();
         ArrayList<String> arrayList = new ArrayList<>();
-        arrayList = editor.Read(userInput); 
+        arrayList = editor.Read(userInput); // splits the user's input and stores it in an Arraylist
 
         String line = userInput;
         String [] words = line.split(" "); // split the user's input and store each word in an array
@@ -66,10 +64,10 @@ public class Controller {
         // check if user input is 4 or 7 words
         if(words.length == 4 || words.length == 7) {     
             MathClass math = new MathClass();  
-            Translator translator = new Translator(math);   
+            Translator translator = new Translator(math); 
             result = translator.translate(arrayList); // store the result of the arithmetic operation in result variable
 
-            // check if variable result returns an Error message
+            // check if variable result returns an error message
             if(result.contains("Error")) {
                 errorMessage = result;  // set errorMessage to that error message
                 result = "NaN"; // set result to String "NaN"
@@ -82,7 +80,9 @@ public class Controller {
         }
         
         errorGUI.setText(errorMessage); // display error message to user
-        resultMessage.setText(result); //display result to user 
+        resultMessage.setText(result); // display result to user 
+        
+        history.appendText(errorMessage + " Result of this input is " + result + "\n"); // display error message and result in the History section
     }
 
 
