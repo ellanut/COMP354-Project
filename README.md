@@ -64,6 +64,13 @@ Here is an example of the Test Cases of the `Editor Component`:
 
 ![screenshot4](https://i.gyazo.com/f144ea75c877254d7b9177cf4e03e061.png "EDITOR Test Cases Result")
 
+## Coding Standards
+-All code is commented where necessary.
+-Accessor and Mutator methods are provided for all needed Class attributes.
+-Variable names are clear.
+-Object-Oriented design is respected.
+-Use of Interfaces.
+
 ## About Group E
 This program was created for our COMP 354 Class by <br>
 Andrei Neagu - 40109412 <br>
